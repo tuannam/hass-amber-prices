@@ -1,0 +1,7 @@
+{
+  "name": "Amber Prices",
+  "domain": "amber_prices",
+  "country": "AU",
+  "homeassistant": "2024.6.0",
+  "codeowners": ["@tuannam"]
+}
