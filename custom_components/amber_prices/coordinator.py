@@ -39,7 +39,8 @@ class AmberCoordinator(DataUpdateCoordinator):
         try:
             session = async_get_clientsession(self.hass)
             try:
-                async with session.get(self.api_url, headers=HEADERS, timeout=10) as resp:
+                timeout = aiohttp.ClientTimeout(total=15)
+                async with session.get(self.api_url, headers=HEADERS, timeout=timeout) as resp:
                     if resp.status != 200:
                         text = await resp.text()
                         _LOGGER.error(
